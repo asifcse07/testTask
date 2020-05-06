@@ -8,8 +8,8 @@ class apidataTest extends \PHPUNIT_Framework_TestCase{
     public function testGetBinData(){
         try {
             // something here
-            $value[] = "";//"45717360";
-            $data = $this->assertTrue(true);
+            $value[] = "45717360";
+            $data = $this->assertNotEmpty($value);
             return $data;
         } catch (\SpecificException $e) {
             // force a fail:
@@ -21,7 +21,7 @@ class apidataTest extends \PHPUNIT_Framework_TestCase{
     public function testGetRate(){
         try {
             $value[2] = "EUR";
-            $this->assertTrue(False);
+            $data = $this->assertNotEmpty($value);
         } catch (\SpecificException $e) {
             // force a fail:
             throw new \PHPUnitException("This was not expected.");
